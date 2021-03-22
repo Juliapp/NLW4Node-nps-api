@@ -6,10 +6,17 @@
   "author": "Juliapp <aragaopintojuli@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "reflect-metadata": "^0.1.13",
+    "sqlite3": "^5.0.2",
+    "typeorm": "^0.2.31"
   },
   "scripts": {
-    "dev": "ts-node-dev --transpile-only --ignore-watch node_modules src/server.ts"
+    "dev": "ts-node-dev --transpile-only --ignore-watch node_modules src/server.ts",
+    "typeorm": "ts-node-dev node_modules/typeorm/cli.js",
+    "create-migration": "yarn typeorm migration:create -n",
+    "run-migration": "yarn typeorm migration:run",
+    "rollback-migration": "yarn typeorm migration:revert"
   },
   "devDependencies": {
     "@types/express": "^4.17.11",
